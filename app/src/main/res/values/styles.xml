@@ -31,4 +31,17 @@
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
     <!-- 分割线 end-->
+
+    <style name="ware_title">
+
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:maxLines">4</item>
+    </style>
+
+    <style name="ware_price">
+        <item name="android:textColor">@color/crimson</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
 </resources>
