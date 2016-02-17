@@ -2,6 +2,7 @@ package com.allen.mobileshop.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ import com.allen.mobileshop.fragment.CategoryFragment;
 import com.allen.mobileshop.fragment.HotFragment;
 import com.allen.mobileshop.fragment.HomeFragment;
 import com.allen.mobileshop.fragment.MineFragment;
+import com.allen.mobileshop.utils.ToastUtils;
 import com.allen.mobileshop.widget.FragmentTabHost;
 
 import java.util.ArrayList;
@@ -71,5 +73,20 @@ public class MainActivity extends AppCompatActivity {
         icon.setBackgroundResource(tab.getIcon());
         title.setText(tab.getTitle());
         return view;
+    }
+
+    private long exitTime = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == event.getKeyCode()) {
+            if ((System.currentTimeMillis() - exitTime) > 1000) {
+                exitTime = System.currentTimeMillis();
+                ToastUtils.showShort(this, "连按两次退出程序");
+            } else {
+                this.finish();
+            }
+        }
+        return false;
     }
 }
