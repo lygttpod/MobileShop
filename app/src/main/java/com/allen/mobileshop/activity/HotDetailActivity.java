@@ -1,6 +1,7 @@
 package com.allen.mobileshop.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -30,7 +31,6 @@ public class HotDetailActivity extends BaseActivity {
 
     private void initToolBar() {
         toolBarX = getToolbar();
-        toolBarX.setDisplayHomeAsUpEnabled(true);
         toolBarX.setTitle("商品详情");
     }
 
